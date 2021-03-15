@@ -270,6 +270,7 @@ public class Solution {
         for (int i = 0; i <l-1 ; i++) {
             int x =nums[i],y=nums[i+1];
             if (x>y){
+
                 /**
                  * 递减。判断改变 x 还是y
                  * 如果  nums[i]> nums[i+1] >= nums[i-1]
