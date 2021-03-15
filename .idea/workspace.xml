@@ -3,12 +3,55 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:gitee" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1962fe4-dfe2-4299-993a-4d20e709e9e4" name="Default Changelist" comment="" />
+    <list default="true" id="d1962fe4-dfe2-4299-993a-4d20e709e9e4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MyHashSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javaleetcode.iml" beforeDir="false" afterPath="$PROJECT_DIR$/javaleetcode.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -18,10 +61,54 @@
     </option>
   </component>
   <component name="ProjectId" id="1pc3eIzS9RNekXIUFOzWttwSlyH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager" selected="Application.MyHashSet">
+    <configuration name="MyHashSet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MyHashSet" />
+      <module name="javaleetcode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Solution" />
+      <module name="javaleetcode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MyHashSet" />
+        <item itemvalue="Application.Solution" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -31,8 +118,149 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615468654126</updated>
-      <workItem from="1615468655690" duration="2000" />
+      <workItem from="1615468655690" duration="6561000" />
+      <workItem from="1615551415380" duration="7594000" />
+      <workItem from="1615605494907" duration="9666000" />
+      <workItem from="1615691377538" duration="14325000" />
+      <workItem from="1615813269468" duration="5432000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="769" y="223" key="#com.intellij.ide.util.MemberChooser" timestamp="1615729809199">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="769" y="223" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1036@0.0.1920.1036" timestamp="1615729809199" />
+    <state x="698" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615729471354">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="698" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1615729471354" />
+    <state width="442" height="466" key="DebuggerActiveHint" timestamp="1615727844202">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="442" height="466" key="DebuggerActiveHint/0.0.1920.1036@0.0.1920.1036" timestamp="1615727844202" />
+    <state x="748" y="273" key="FileChooserDialogImpl" timestamp="1615730148253">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="748" y="273" key="FileChooserDialogImpl/0.0.1920.1036@0.0.1920.1036" timestamp="1615730148253" />
+    <state x="855" y="437" key="Gitee.ShareDialog" timestamp="1615468729895">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="855" y="437" key="Gitee.ShareDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1615468729895" />
+    <state x="877" y="434" key="Github.ShareDialog" timestamp="1615468710893">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="877" y="434" key="Github.ShareDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1615468710893" />
+    <state x="750" y="240" key="Github.UntrackedFilesDialog" timestamp="1615468717568">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="750" y="240" key="Github.UntrackedFilesDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1615468717568" />
+    <state width="1541" height="402" key="GridCell.Tab.0.bottom" timestamp="1615730758496">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1541" height="402" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1615730758496" />
+    <state width="1541" height="402" key="GridCell.Tab.0.center" timestamp="1615730758496">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1541" height="402" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1615730758496" />
+    <state width="1541" height="402" key="GridCell.Tab.0.left" timestamp="1615730758495">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1541" height="402" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1615730758495" />
+    <state width="1541" height="402" key="GridCell.Tab.0.right" timestamp="1615730758496">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1541" height="402" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1615730758496" />
+    <state width="1541" height="402" key="GridCell.Tab.1.bottom" timestamp="1615730758746">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1541" height="402" key="GridCell.Tab.1.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1615730758746" />
+    <state width="1541" height="402" key="GridCell.Tab.1.center" timestamp="1615730758745">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1541" height="402" key="GridCell.Tab.1.center/0.0.1920.1036@0.0.1920.1036" timestamp="1615730758745" />
+    <state width="1541" height="402" key="GridCell.Tab.1.left" timestamp="1615730758745">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1541" height="402" key="GridCell.Tab.1.left/0.0.1920.1036@0.0.1920.1036" timestamp="1615730758745" />
+    <state width="1541" height="402" key="GridCell.Tab.1.right" timestamp="1615730758746">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="1541" height="402" key="GridCell.Tab.1.right/0.0.1920.1036@0.0.1920.1036" timestamp="1615730758746" />
+    <state x="494" y="177" key="Maven.ArtifactSearchDialog" timestamp="1615645635960">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="494" y="177" key="Maven.ArtifactSearchDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1615645635960" />
+    <state x="322" y="175" key="SettingsEditor" timestamp="1615728889400">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="322" y="175" key="SettingsEditor/0.0.1920.1036@0.0.1920.1036" timestamp="1615728889400" />
+    <state width="498" height="444" key="SwitcherDM" timestamp="1615730154034">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state width="498" height="444" key="SwitcherDM/0.0.1920.1036@0.0.1920.1036" timestamp="1615730154034" />
+    <state x="824" y="319" width="598" height="520" key="find.popup" timestamp="1615730297401">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="824" y="319" width="598" height="520" key="find.popup/0.0.1920.1036@0.0.1920.1036" timestamp="1615730297401" />
+    <state x="751" y="271" key="refactoring.ChangeSignatureDialog" timestamp="1615648052203">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="751" y="271" key="refactoring.ChangeSignatureDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1615648052203" />
+    <state x="738" y="284" width="672" height="678" key="search.everywhere.popup" timestamp="1615730224393">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="738" y="284" width="672" height="678" key="search.everywhere.popup/0.0.1920.1036@0.0.1920.1036" timestamp="1615730224393" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Solution.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_181/src.zip!/java/util/Arrays.java</url>
+          <line>4145</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_181/src.zip!/java/util/HashMap.java</url>
+          <line>626</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/MyHashSet.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Solution.java</url>
+          <line>253</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="MyHashSet$Node" memberName="next" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
