@@ -27,16 +27,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1962fe4-dfe2-4299-993a-4d20e709e9e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MyHashSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="d1962fe4-dfe2-4299-993a-4d20e709e9e4" name="Default Changelist" comment="leetcode">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javaleetcode.iml" beforeDir="false" afterPath="$PROJECT_DIR$/javaleetcode.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Solution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +65,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -122,8 +116,16 @@
       <workItem from="1615551415380" duration="7594000" />
       <workItem from="1615605494907" duration="9666000" />
       <workItem from="1615691377538" duration="14325000" />
-      <workItem from="1615813269468" duration="5432000" />
+      <workItem from="1615813269468" duration="6179000" />
     </task>
+    <task id="LOCAL-00001" summary="leetcode">
+      <created>1615820097274</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1615820097274</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +142,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="leetcode" />
+    <option name="LAST_COMMIT_MESSAGE" value="leetcode" />
   </component>
   <component name="WindowStateProjectService">
     <state x="769" y="223" key="#com.intellij.ide.util.MemberChooser" timestamp="1615729809199">
@@ -170,22 +176,22 @@
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state x="750" y="240" key="Github.UntrackedFilesDialog/0.0.1920.1036@0.0.1920.1036" timestamp="1615468717568" />
-    <state width="1541" height="402" key="GridCell.Tab.0.bottom" timestamp="1615730758496">
+    <state width="1194" height="556" key="GridCell.Tab.0.bottom" timestamp="1615820112681">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1541" height="402" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1615730758496" />
-    <state width="1541" height="402" key="GridCell.Tab.0.center" timestamp="1615730758496">
+    <state width="1194" height="556" key="GridCell.Tab.0.bottom/0.0.1920.1036@0.0.1920.1036" timestamp="1615820112681" />
+    <state width="1194" height="556" key="GridCell.Tab.0.center" timestamp="1615820112680">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1541" height="402" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1615730758496" />
-    <state width="1541" height="402" key="GridCell.Tab.0.left" timestamp="1615730758495">
+    <state width="1194" height="556" key="GridCell.Tab.0.center/0.0.1920.1036@0.0.1920.1036" timestamp="1615820112680" />
+    <state width="1194" height="556" key="GridCell.Tab.0.left" timestamp="1615820112680">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1541" height="402" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1615730758495" />
-    <state width="1541" height="402" key="GridCell.Tab.0.right" timestamp="1615730758496">
+    <state width="1194" height="556" key="GridCell.Tab.0.left/0.0.1920.1036@0.0.1920.1036" timestamp="1615820112680" />
+    <state width="1194" height="556" key="GridCell.Tab.0.right" timestamp="1615820112680">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
-    <state width="1541" height="402" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1615730758496" />
+    <state width="1194" height="556" key="GridCell.Tab.0.right/0.0.1920.1036@0.0.1920.1036" timestamp="1615820112680" />
     <state width="1541" height="402" key="GridCell.Tab.1.bottom" timestamp="1615730758746">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
@@ -214,6 +220,10 @@
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
     <state width="498" height="444" key="SwitcherDM/0.0.1920.1036@0.0.1920.1036" timestamp="1615730154034" />
+    <state x="782" y="283" key="Vcs.Push.Dialog.v2" timestamp="1615820351512">
+      <screen x="0" y="0" width="1920" height="1036" />
+    </state>
+    <state x="782" y="283" key="Vcs.Push.Dialog.v2/0.0.1920.1036@0.0.1920.1036" timestamp="1615820351512" />
     <state x="824" y="319" width="598" height="520" key="find.popup" timestamp="1615730297401">
       <screen x="0" y="0" width="1920" height="1036" />
     </state>
@@ -252,7 +262,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Solution.java</url>
-          <line>253</line>
+          <line>297</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>

@@ -267,7 +267,6 @@ public class Solution {
 
     public boolean checkPossibility(int[] nums) {
         int n =0,l = nums.length;
-
         for (int i = 0; i <l-1 ; i++) {
             int x =nums[i],y=nums[i+1];
             if (x>y){
