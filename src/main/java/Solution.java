@@ -291,8 +291,282 @@ public class Solution {
     }
 
 
+
+
+    private  int dfs(String s,String t,int i ,int j ,int[][] a){
+        int now;
+        if (j == t.length()){ return 1; }
+        if (s.length()-i < t.length()-j){return 0;}
+        if ((now=a[i][j]) >-1){return now;}
+        int res =0;
+        for (; i <s.length() ; i++) {
+            if (s.charAt(i) == t.charAt(j)){
+                res += dfs(s,t,i+1,j+1,a);
+            }
+            a[i][j] = res;
+        }
+        return res;
+    }
+
+
+    public int numDistinct(String s, String t) {
+        int[][] memo = new int[s.length()][t.length()];
+        for (int i = 0; i < s.length(); i++) {
+            Arrays.fill(memo[i], -1);
+        }
+        return dfs1(s, t, 0, 0, memo);
+    }
+
+    public int dfs1(String s, String t, int i, int j, int[][] memo) {
+        if (j == t.length()) return 1;
+        if (i == s.length() || (s.length()-i<t.length()-j)) return 0;
+        if (memo[i][j] != -1) return memo[i][j];
+        if (s.charAt(i) == t.charAt(j)) {
+            memo[i][j] = dfs1(s, t,i+1, j+1, memo) + dfs(s,t,i+1,j,memo);
+        } else {
+            memo[i][j] = dfs1(s, t, i+1, j, memo);
+        }
+        return memo[i][j];
+    }
+
+
+    /**
+     * <link> https://leetcode-cn.com/problems/reverse-linked-list-ii/
+     * 92. 反转链表 II
+     * */
+
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        // 因为头节点有可能发生变化，使用虚拟头节点可以避免复杂的分类讨论
+        ListNode dummyNode = new ListNode(-1);
+        dummyNode.next = head;
+
+        ListNode pre = dummyNode;
+        // 第 1 步：从虚拟头节点走 left - 1 步，来到 left 节点的前一个节点
+        // 建议写在 for 循环里，语义清晰
+        for (int i = 0; i < left - 1; i++) {
+            pre = pre.next;
+        }
+
+        // 第 2 步：从 pre 再走 right - left + 1 步，来到 right 节点
+        ListNode rightNode = pre;
+        for (int i = 0; i < right - left + 1; i++) {
+            rightNode = rightNode.next;
+        }
+
+        // 第 3 步：切断出一个子链表（截取链表）
+        ListNode leftNode = pre.next;
+        ListNode curr = rightNode.next;
+
+        // 注意：切断链接
+        pre.next = null;
+        rightNode.next = null;
+
+        // 第 4 步：同第 206 题，反转链表的子区间
+        reverseLinkedList(leftNode);
+
+        // 第 5 步：接回到原来的链表中
+        pre.next = rightNode;
+        leftNode.next = curr;
+        return dummyNode.next;
+    }
+
+    private void reverseLinkedList(ListNode head) {
+        // 也可以使用递归反转一个链表
+        ListNode pre = null;
+        ListNode cur = head;
+
+        while (cur != null) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+    }
+
+    /**
+     * <link>https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/
+     * 150. 逆波兰表达式求值
+    * */
+    public int evalRPN(String[] tokens) {
+        LinkedList<Integer> objects = new LinkedList<>();
+        List a = Arrays.asList("+","-","*","/");
+        for (String chars: tokens) {
+            Integer i;
+            if (a.contains(chars)){
+                Integer pop = objects.pop();
+                Integer pop1 = objects.pop();
+                switch (chars){
+                    case "+":
+                        i = pop1+pop;
+                        break;
+                    case "-":
+                        i = pop1-pop;
+                        break;
+                    case "*":
+                        i = pop1*pop;
+                        break;
+                    default:
+                        i = pop1/pop;
+                        break;
+                }
+            }else {
+                i = Integer.valueOf(chars);
+            }
+            objects.push(i);
+        }
+        return objects.pop();
+    }
+
+
+    /**
+     * <link> https://leetcode-cn.com/problems/set-matrix-zeroes/
+     *73. 矩阵置零
+    * */
+    public void setZeroes
+            (int[][] matrix) {
+        HashMap<Integer, List<Integer>> map = new HashMap<>();
+        int m = matrix.length,n = matrix[0].length;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (matrix[i][j] ==0){
+                    if (!map.containsKey(i)){
+                        map.put(i,new ArrayList<>());
+                    }
+                    map.get(i).add(j);
+                }
+            }
+        }
+        map.forEach((k,v) ->{
+            Arrays.fill(matrix[k],0);
+            v.forEach(i->{
+                        for (int j = 0; j < m; j++) {
+                            matrix[j][i] =0;
+                        }
+                    }
+            );
+        });
+
+    }
+
+    /**
+     * <link> https://leetcode-cn.com/problems/number-of-1-bits/
+     * 191. 位1的个数
+     * */
+    // you need to treat n as an unsigned value
+    public int hammingWeight(int n) {
+        int ret = 0;
+        for (int i = 0; i < 32; i++) {
+            if ((n & (1 << i)) != 0) {
+                ret++;
+            }
+        }
+        return ret;
+    }
+
+
+    /**
+     * <link> https://leetcode-cn.com/problems/132-pattern/
+     * 456. 132 模式
+     * */
+    public boolean find132pattern(int[] nums) {
+        int n = nums.length,max = Integer.MIN_VALUE;
+        if (n<3){return  false;}
+        LinkedList<Integer> dq = new LinkedList<>();
+        dq.push(nums[n-1]);
+        for (int i = n-2; i >=0 ; i--) {
+            if (nums[i]<max){
+                return true;
+            }
+            while (!dq.isEmpty() && nums[i]>dq.peek()){
+                max = dq.pop();
+            }
+            dq.push(nums[i]);
+        }
+        return false;
+    }
+
+/**
+ * <link> https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/
+ * 82. 删除排序链表中的重复元素 II
+ * */
+    public ListNode deleteDuplicates1(ListNode head) {
+        ListNode dumpHead = new ListNode(Integer.MIN_VALUE, head);
+        ListNode cur = dumpHead;
+        while ( cur.next!=null && cur.next.next!=null){
+            if (cur.next.val == cur.next.next.val){
+                int x = cur.next.val;
+                while (cur.next !=null && cur.next.val == x){
+                    cur.next = cur.next.next;
+                }
+            }else {
+                cur =cur.next;
+            }
+        }
+        return dumpHead.next;
+    }
+
+   //efinition for singly-linked list.
+    public class ListNode {
+        int val;
+        ListNode next;
+        ListNode() {}
+        ListNode(int val) { this.val = val; }
+        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
+
+    /**
+     * <link> https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/
+     *83. 删除排序链表中的重复元素
+     *
+     * */
+
+        public ListNode deleteDuplicates(ListNode head) {
+        ListNode cur = head;
+        if (head == null){return  head;}
+        while (head !=null && head.next!=null){
+            if (head.val == head.next.val){
+                head.next = head.next.next;
+            }else {
+                head = head.next;
+            }
+        }
+        return cur;
+    }
+
+        /**
+         * 74. 搜索二维矩阵
+         * <link> https://leetcode-cn.com/problems/search-a-2d-matrix/solution/
+         * */
+    public boolean searchMatrix(int[][] matrix, int target) {
+        int m = matrix.length,n = matrix[0].length;
+        if (target<matrix[0][0] || target>matrix[m-1][n-1]){return false;}
+        boolean flag =false;
+        for (int i = 0; i < m; i++) {
+            if (matrix[i][0]<=target && target<=matrix[i][n-1]){
+                flag = (Arrays.binarySearch(matrix[i],target)>=0) ;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    /**
+     * <link>  https://leetcode-cn.com/problems/reverse-bits/
+     * 190. 颠倒二进制位
+     * */
+
+    // you need treat n as an unsigned value
+    public int reverseBits(int n) {
+        int rev = 0;
+        for (int i = 0; i < 32 && n != 0; ++i) {
+            rev |= (n & 1) << (31 - i);
+            n >>>= 1;
+        }
+        return rev;
+    }
+
+
     public static void main(String[] args) throws ScriptException {
-        HashMap<Integer,Integer> objectMyHashSet = new HashMap<>();
-        objectMyHashSet.put(1,2);
+        new Solution().numDistinct("rabbbit","rabbit");
     }
 }
