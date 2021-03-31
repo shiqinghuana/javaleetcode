@@ -1,5 +1,4 @@
-import java.util.Deque;
-import java.util.LinkedList;
+import java.util.*;
 
 public class Aa {
 
@@ -30,6 +29,18 @@ public class Aa {
             stack.pop();
         }
         return dfs(stack,preorder,i+1);
+
+
+    }
+
+    public static void main(String[] args) {
+        ArrayList<List> objects = new ArrayList<>();
+        List<Integer> integers = Arrays.asList(1, 2, 3);
+        objects.add(integers);
+        List<Integer> integers1 = Arrays.asList(1, 2, 3);
+        System.out.println(objects.contains(integers1));
+
+
 
 
     }
