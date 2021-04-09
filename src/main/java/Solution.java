@@ -596,32 +596,33 @@ public class Solution {
         // 深度搜索，任意元素都可以选择插入或者不插入
         Arrays.sort(nums);
         ArrayList<List<Integer>> result = new ArrayList<>();
-        dfsSubsetsWithDup(nums, 0, new ArrayList<>(),result);
+        dfsSubsetsWithDup(nums, 0, new ArrayList<>(), result);
         return result;
     }
 
-    public void dfsSubsetsWithDup(int[] nums, int i, List<Integer> pre,ArrayList<List<Integer>> result1){
+    public void dfsSubsetsWithDup(int[] nums, int i, List<Integer> pre, ArrayList<List<Integer>> result1) {
         if (i == nums.length) {
             // 这里要想办法优化一下
-            if (!result1.contains(pre)){
+            if (!result1.contains(pre)) {
                 result1.add(pre);
             }
             return;
         }
-        dfsSubsetsWithDup(nums, i + 1, pre,result1);
+        dfsSubsetsWithDup(nums, i + 1, pre, result1);
         pre = new ArrayList<>(pre);
         pre.add(nums[i]);
-        dfsSubsetsWithDup(nums, i + 1, pre,result1);
+        dfsSubsetsWithDup(nums, i + 1, pre, result1);
 
     }
-    public void dfsSubsetsWithDup(int[] nums, int i, Map<Integer, Integer> pre, List<Map<Integer, Integer>> result,ArrayList<List<Integer>> result1) {
+
+    public void dfsSubsetsWithDup(int[] nums, int i, Map<Integer, Integer> pre, List<Map<Integer, Integer>> result, ArrayList<List<Integer>> result1) {
 
         if (i == nums.length) {
             if (!result.contains(pre)) {
                 result.add(pre);
                 ArrayList<Integer> objects = new ArrayList<>();
-                for (Map.Entry<Integer, Integer> a:
-                     pre.entrySet()) {
+                for (Map.Entry<Integer, Integer> a :
+                        pre.entrySet()) {
                     for (int j = 0; j < a.getValue(); j++) {
                         objects.add(a.getKey());
                     }
@@ -631,16 +632,226 @@ public class Solution {
             return;
         }
 
-        dfsSubsetsWithDup(nums, i + 1, pre, result,result1);
+        dfsSubsetsWithDup(nums, i + 1, pre, result, result1);
         pre = new HashMap(pre);
         pre.merge(nums[i], 1, Integer::sum);
-        dfsSubsetsWithDup(nums, i + 1, pre, result,result1);
+        dfsSubsetsWithDup(nums, i + 1, pre, result, result1);
 
     }
 
+    /**
+     * 面试题 17.21. 直方图的水量
+     * https://leetcode-cn.com/problems/volume-of-histogram-lcci/
+     * 思路，找坑
+     * 坑的特点 1 >2<3 中间低两边高纪为子数组 subInt
+     * <p>
+     * 水量计算方式
+     * maxtrap =  subInt.size()* maxHeige（最高水位 ）  //区间所能容纳最大水量
+     * maxtrap -= （maxHeige-minHeige(起始水位) ）* subInt.size() 去掉最高层
+     * maxtrap -= subInt.each + maxHeige-minHeige
+     * 把所有区间水位相加就是最终容纳的水位
+     * <p>
+     * 需要有一个纪录水位线的过程，最高水位线只可能出现在左侧或者右侧，如果在右侧，结算一次，否则纪录一下
+     */
+
+    public int trap(int[] height) {
+        if (height.length < 2) {
+            return 0;
+        } // 最少要
+        int left = 0, right = 1, res = 0; // 起始水位，左右下标
+        boolean flag = false; //递减 true 递增
+        List<Integer> stack = new ArrayList<>();
+        for (int i = 0; i < height.length; i++) {
+            if (height[i] > 0) {
+                left = i; // 先找打第一个不为0的下标
+                break;
+            }
+        }
+        stack.add(left);
+        // 选出所有的坑
+        for (int i = left; i < height.length-1; i++) {
+
+            if (flag && height[i] > height[i + 1]) {
+                stack.add(i);
+                flag = !flag;
+            } else if (height[i] < height[i + 1]) {
+                flag = !flag;
+            }
+        }
+        stack.add(height.length-1);
+        System.out.println(stack);
+        // 把小坑去掉
+        if (stack.size() <2){return res;}
+        int prt=1;
+        while (prt <(stack.size()-1)){
+            int now = stack.get(prt);
+            int after = stack.get(prt+1);
+            int before = stack.get(prt-1);
+            if (height[now]<height[before] && height[now] <height[after] ){
+                stack.remove(prt);
+                continue;
+            }
+            prt ++;
+        }
+        // 计算综合
+
+        for (int i = 0; i < stack.size()-1; i++) {
+            res +=settlement(height,i,i+1);
+        }
+
+        return res;
+    }
+
+    private int settlement(int[] height, int left, int right) {
+        int allTrap, minHeight, pre;//总数量，两侧最高水位，当前水位
+        minHeight = Math.min(height[left], height[right]);
+        allTrap = (right - left + 1) * minHeight;
+        for (; left <= right; left++) {
+            allTrap -= ((pre = height[left]) > minHeight) ? minHeight : pre;
+        }
+        System.out.println("当前水位" + allTrap);
+        return allTrap;
+    }
+
+
+
+
+    /**
+     * 1143. 最长公共子序列
+     * https://leetcode-cn.com/problems/longest-common-subsequence/
+     * */
+    public int longestCommonSubsequence(String text1, String text2) {
+        int m = text1.length(), n = text2.length();
+        int[][] dp = new int[m + 1][n + 1];
+        for (int i = 1; i <= m; i++) {
+            char c1 = text1.charAt(i - 1);
+            for (int j = 1; j <= n; j++) {
+                char c2 = text2.charAt(j - 1);
+                if (c1 == c2) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+                } else {
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
+                }
+            }
+        }
+        return dp[m][n];
+    }
+
+
+
+    /**
+     *
+     * 81. 搜索旋转排序数组 II
+     *
+     * https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/
+     * */
+    public boolean search(int[] nums, int target) {
+
+        return binSearch(nums,0,nums.length-1,target);
+    }
+    // 二分法找到旋转点
+    private boolean binSearch(int[] nums, int left,int right, int target){
+        int mid = (left+right)/2;
+        if (right-left <2){ // 相邻或者重合了
+            return nums[left] ==target || nums[right]==target;
+        }
+        if (nums[mid] == target){
+            return true;
+        }// 判断那边是有序的
+        if (nums[left] >nums[mid] || nums[right] > nums[mid]){
+            // 右侧有序
+            // 如果右侧值 大于 target ，必然落于右区间，否则，落于左区间
+            System.out.println("右侧有序");
+            if (nums[right]>=target && nums[mid]<=target){
+                System.out.println("在右区间");
+                return binSearch(nums,mid,right,target);
+            }
+            System.out.println("在左区间");
+            return binSearch(nums,left,mid,target);
+        }else if (nums[left] <nums[mid] || nums[right] <nums[mid]){
+            //左侧有序
+            // 如果左侧值大于 target，必然落于左区间，否则，落于右区间
+            System.out.println("左侧有序");
+            if (nums[left]<=target && nums[mid]>=target){
+                System.out.println("在左区间");
+                return binSearch(nums,left,mid,target);
+            }
+            System.out.println("在右区间");
+            return binSearch(nums,mid,right,target);
+        }
+        // 判断不了 左中右三个值都相等了
+        System.out.println("没法判断");
+        return binSearch(nums,left+1,right-1,target);
+    }
+
+
+
+    /**
+    * 153. 寻找旋转排序数组中的最小值
+     *
+     * https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/
+    * */
+    public int findMin(int[] nums) {
+        // [3,4,1,2]
+        int n;
+        if ((n=nums.length-1)==0){return nums[0];}
+        return beserch(nums,0,n);
+    }
+    private int beserch(int[] nums,int left,int right){
+        int mid = (left+right)/2;
+        if (left == right){return nums[left];}
+        if (right - left ==1){return Math.min(nums[left],nums[right]);}
+        if (nums[mid]>nums[right]){
+            //说明最小值必然在右侧
+            return beserch(nums,mid,right);
+        }
+        // 说明最小值要么是mid 要么在左侧
+        return beserch(nums,left,mid);
+
+    }
+
+    /**
+     * 154. 寻找旋转排序数组中的最小值 II
+     * https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/
+     * */
+    public int findMin1(int[] nums) {
+        return beserch1(nums,0,nums.length-1,nums[0]);
+    }
+
+    private int beserch1(int[] nums,int left,int right,int min){
+        int mid = (left+right)/2;
+        if (right - left <2){return Math.min(Math.min(nums[left],nums[right]),min);}
+
+        /**
+         * 能判断最小值在左右
+         * if Mid < right    in mid. or left
+         * if mid>right    in mid. or right
+         * if mid > left  in left. or right  ???
+         * if mid < left in mid. or left
+         * 不能判断最小值在左右
+         * else mid == left ==right  then
+         *      left++ right--
+         * */
+        if (nums[mid]<nums[right] || nums[mid] <nums[left]){
+            return beserch1(nums,left,mid,min);
+        }
+        if (nums[mid]>nums[right] ){
+            return beserch1(nums,mid,right,min);
+        }
+        if (nums[mid] >nums[left]){
+            // 可能是left本身或者在右区间
+            min = Math.min(nums[left],min);
+            return beserch1(nums,mid,right,min);
+        }
+        return beserch1(nums,left+1,right-1,min);
+    }
+
+
+
+
     public static void main(String[] args) throws ScriptException {
 
-        int[] a= {1,2,2};
+        int[] a = {1, 2, 2};
         new Solution().subsetsWithDup(a);
 
     }

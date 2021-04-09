@@ -28,9 +28,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1962fe4-dfe2-4299-993a-4d20e709e9e4" name="Default Changelist" comment="leetcode">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Aa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Solution.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,19 +94,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Solution" />
@@ -133,6 +118,8 @@
       <workItem from="1615991117595" duration="716000" />
       <workItem from="1617112862567" duration="2254000" />
       <workItem from="1617193489959" duration="6769000" />
+      <workItem from="1617368610819" duration="4965000" />
+      <workItem from="1617413711179" duration="4324000" />
     </task>
     <task id="LOCAL-00001" summary="leetcode">
       <created>1615820097274</created>
